@@ -127,28 +127,37 @@ function Calculator() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      event.preventDefault();
       const { key } = event;
 
       if (/[0-9]/.test(key)) {
+        event.preventDefault();
         handleNumberClick(parseInt(key));
       } else if (key === '.') {
+        event.preventDefault();
         handleDecimalClick();
       } else if (key === 'Escape' || key === 'c' || key === 'C') {
+        event.preventDefault();
         handleClearClick();
       } else if (key === '/' || key === '÷') {
+        event.preventDefault();
         handleOperationClick('÷');
       } else if (key === '*' || key === '×') {
+        event.preventDefault();
         handleOperationClick('×');
       } else if (key === '-' || key === '−') {
+        event.preventDefault();
         handleOperationClick('−');
       } else if (key === '+' || key === 'Add') {
+        event.preventDefault();
         handleOperationClick('+');
-      } else if (key === '=' || key === 'Enter') {
+      } else if (key === '=') {
+        event.preventDefault();
         handleEqualsClick();
       } else if (key === '%') {
+        event.preventDefault();
         handlePercentClick();
       } else if (key === 's' || key === 'S') {
+        event.preventDefault();
         handleSquareRootClick();
       }
     };
@@ -265,7 +274,8 @@ function Calculator() {
 
 function App() {
   return (
-    <div className="bg-slate-950 h-dvh w-full flex items-center justify-center">
+    <div className="bg-linear-to-br from-slate-800 to-slate-950  h-dvh w-full flex items-center justify-center relative overflow-clip">
+      <div className="w-[600px] h-[800px] absolute right-0 translate-x-1/2 translate-y-[200px] bg-slate-800 rounded-full blur-[150px]"></div>
       <Calculator />
     </div>
   );
