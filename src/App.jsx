@@ -1,9 +1,5 @@
-function CalculatorButton() {
-  return <></>;
-}
-
 function Calculator() {
-  return <div className="bg-white">Create your calculator here!</div>;
+  return <div className="bg-white"></div>;
 }
 
 function App() {
